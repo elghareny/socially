@@ -10,19 +10,19 @@ import React from "react";
 import {isFollowing} from "../../../actions/profile.action";
 import ProfilePageClient from "./ProfilePageClient";
 
-export const generateMetaData = async ({
-	params,
-}: {
-	params: {username: string};
-}) => {
-	const user = await getProfileByUsername(params.username);
-	if (!user) return;
+// export const generateMetaData = async ({
+// 	params,
+// }: {
+// 	params: {username: string};
+// }) => {
+// 	const user = await getProfileByUsername(params.username);
+// 	if (!user) return;
 
-	return {
-		title: `${user.name ?? user.username}`,
-		description: user.bio || `Check out ${user.username}'s profile.`,
-	};
-};
+// 	return {
+// 		title: `${user.name ?? user.username}`,
+// 		description: user.bio || `Check out ${user.username}'s profile.`,
+// 	};
+// };
 
 const ProfilePageServer = async ({params}: {params: {username: string}}) => {
 	const user = await getProfileByUsername(params.username);
